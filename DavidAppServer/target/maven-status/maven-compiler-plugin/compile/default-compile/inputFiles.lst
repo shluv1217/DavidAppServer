@@ -1,0 +1,10 @@
+/Users/shindavid/git/DavidAppServer/src/main/java/DavidApp/DavidAppServer/controller/GreetingController.java
+/Users/shindavid/git/DavidAppServer/src/main/java/DavidApp/DavidAppServer/controller/HotelController.java
+/Users/shindavid/git/DavidAppServer/src/main/java/DavidApp/DavidAppServer/service/ImageService.java
+/Users/shindavid/git/DavidAppServer/src/main/java/DavidApp/DavidAppServer/controller/HomeController.java
+/Users/shindavid/git/DavidAppServer/src/main/java/DavidApp/DavidAppServer/model/Image.java
+/Users/shindavid/git/DavidAppServer/src/main/java/DavidApp/DavidAppServer/App.java
+/Users/shindavid/git/DavidAppServer/src/main/java/DavidApp/DavidAppServer/repository/ImageRepository.java
+/Users/shindavid/git/DavidAppServer/src/main/java/DavidApp/DavidAppServer/model/Hotel.java
+/Users/shindavid/git/DavidAppServer/src/main/java/DavidApp/DavidAppServer/model/Greeting.java
+/Users/shindavid/git/DavidAppServer/src/main/java/DavidApp/DavidAppServer/repository/HotelRepository.java
