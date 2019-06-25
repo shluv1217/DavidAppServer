@@ -25,28 +25,57 @@ public class App {
 
 	public static void main(String[] args) {
 		
-		String text = "It is raining today in Seattle";
-
-        // Create credentials using a provider chain. For more information, see
-        // https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html
-        AWSCredentialsProvider awsCreds = DefaultAWSCredentialsProviderChain.getInstance();
- 
-        AmazonComprehend comprehendClient =
-            AmazonComprehendClientBuilder.standard()
-                                         .withCredentials(awsCreds)
-                                         .withRegion("us-east-1")
-                                         .build();
-                                         
-        // Call detectKeyPhrases API
-        System.out.println("Calling DetectKeyPhrases");
-        DetectKeyPhrasesRequest detectKeyPhrasesRequest = new DetectKeyPhrasesRequest().withText(text)
-                                                                                       .withLanguageCode("en");
-        DetectKeyPhrasesResult detectKeyPhrasesResult = comprehendClient.detectKeyPhrases(detectKeyPhrasesRequest);
-        detectKeyPhrasesResult.getKeyPhrases().forEach(System.out::println);
-        System.out.println("End of DetectKeyPhrases\n");
+//		String text = "It is raining today in Seattle";
+//
+//        // Create credentials using a provider chain. For more information, see
+//        // https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html
+//        AWSCredentialsProvider awsCreds = DefaultAWSCredentialsProviderChain.getInstance();
+// 
+//        AmazonComprehend comprehendClient =
+//            AmazonComprehendClientBuilder.standard()
+//                                         .withCredentials(awsCreds)
+//                                         .withRegion("us-east-1")
+//                                         .build();
+//                                         
+//        // Call detectKeyPhrases API
+//        System.out.println("Calling DetectKeyPhrases");
+//        DetectKeyPhrasesRequest detectKeyPhrasesRequest = new DetectKeyPhrasesRequest().withText(text)
+//                                                                                       .withLanguageCode("en");
+//        DetectKeyPhrasesResult detectKeyPhrasesResult = comprehendClient.detectKeyPhrases(detectKeyPhrasesRequest);
+//        detectKeyPhrasesResult.getKeyPhrases().forEach(System.out::println);
+//        System.out.println("End of DetectKeyPhrases\n");
 		
 		SpringApplication.run(App.class, args);
 	}
+	
+	
+	@Component
+	class CompCommandLineRunner implements CommandLineRunner{
+		 @Override
+		    public void run(String... strings)throws Exception{
+			 String text = "It is raining today in Seattle";
+
+		        // Create credentials using a provider chain. For more information, see
+		        // https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html
+		        AWSCredentialsProvider awsCreds = DefaultAWSCredentialsProviderChain.getInstance();
+		 
+		        AmazonComprehend comprehendClient =
+		            AmazonComprehendClientBuilder.standard()
+		                                         .withCredentials(awsCreds)
+		                                         .withRegion("us-east-1")
+		                                         .build();
+		                                         
+		        // Call detectKeyPhrases API
+		        System.out.println("Calling DetectKeyPhrases");
+		        DetectKeyPhrasesRequest detectKeyPhrasesRequest = new DetectKeyPhrasesRequest().withText(text)
+		                                                                                       .withLanguageCode("en");
+		        DetectKeyPhrasesResult detectKeyPhrasesResult = comprehendClient.detectKeyPhrases(detectKeyPhrasesRequest);
+		        detectKeyPhrasesResult.getKeyPhrases().forEach(System.out::println);
+		        System.out.println("End of DetectKeyPhrases\n");
+		       
+		    }
+	}
+	
 	
 	@Component
 	class HotelCommandLineRunner implements CommandLineRunner{
@@ -65,5 +94,7 @@ public class App {
 	        repository.findAll().forEach(System.out::println);
 	    }
 	}
+	
+	
 }
 
