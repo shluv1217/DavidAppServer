@@ -8,7 +8,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Component;
 
 import DavidApp.DavidAppServer.model.Hotel;
+import DavidApp.DavidAppServer.model.Text;
 import DavidApp.DavidAppServer.repository.HotelRepository;
+import DavidApp.DavidAppServer.repository.TextRepository;
 import DavidApp.DavidAppServer.App;
 
 import com.amazonaws.auth.AWSCredentialsProvider;
@@ -53,7 +55,7 @@ public class App {
 	class CompCommandLineRunner implements CommandLineRunner{
 		 @Override
 		    public void run(String... strings)throws Exception{
-			 String text = "It is raining today in Seattle";
+			 	String text = "It is raining today in Seattle";
 
 		        // Create credentials using a provider chain. For more information, see
 		        // https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html
@@ -77,23 +79,42 @@ public class App {
 	}
 	
 	
-	@Component
-	class HotelCommandLineRunner implements CommandLineRunner{
-
-	    private final HotelRepository repository;
-
-	    public HotelCommandLineRunner(HotelRepository repository){
-	        this.repository = repository;
-	    }
-
-	    @Override
-	    public void run(String... strings)throws Exception{
-
-	        Stream.of("Conrad","Hilton","Shilla","Hayatt","Westin","Sangrila").forEach(name-> repository.save(new Hotel(name)));
-
-	        repository.findAll().forEach(System.out::println);
-	    }
-	}
+//	@Component
+//	class HotelCommandLineRunner implements CommandLineRunner{
+//
+//	    private final HotelRepository repository;
+//
+//	    public HotelCommandLineRunner(HotelRepository repository){
+//	        this.repository = repository;
+//	    }
+//
+//	    @Override
+//	    public void run(String... strings)throws Exception{
+//
+//	        Stream.of("Conrad","Hilton","Shilla","Hayatt","Westin","Sangrila").forEach(name-> repository.save(new Hotel(name)));
+//
+//	        repository.findAll().forEach(System.out::println);
+//	    }
+//	}
+	
+	
+//	@Component
+//	class TextCommandLineRunner implements CommandLineRunner{
+//
+//	    private final TextRepository repository;
+//
+//	    public TextCommandLineRunner(TextRepository repository){
+//	        this.repository = repository;
+//	    }
+//
+//	    @Override
+//	    public void run(String... strings)throws Exception{
+//
+//	        Stream.of("Text1","Text2","Text3","Text4","Text5","Text6").forEach(text-> repository.save(new Text(text)));
+//
+//	        repository.findAll().forEach(System.out::println);
+//	    }
+//	}
 	
 	
 }
