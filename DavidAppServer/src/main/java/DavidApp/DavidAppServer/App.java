@@ -51,51 +51,51 @@ public class App {
 	}
 	
 	
-	@Component
-	class CompCommandLineRunner implements CommandLineRunner{
-		 @Override
-		    public void run(String... strings)throws Exception{
-			 	String text = "It is raining today in Seattle";
-
-		        // Create credentials using a provider chain. For more information, see
-		        // https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html
-		        AWSCredentialsProvider awsCreds = DefaultAWSCredentialsProviderChain.getInstance();
-		 
-		        AmazonComprehend comprehendClient =
-		            AmazonComprehendClientBuilder.standard()
-		                                         .withCredentials(awsCreds)
-		                                         .withRegion("us-east-1")
-		                                         .build();
-		                                         
-		        // Call detectKeyPhrases API
-		        System.out.println("Calling DetectKeyPhrases");
-		        DetectKeyPhrasesRequest detectKeyPhrasesRequest = new DetectKeyPhrasesRequest().withText(text)
-		                                                                                       .withLanguageCode("en");
-		        DetectKeyPhrasesResult detectKeyPhrasesResult = comprehendClient.detectKeyPhrases(detectKeyPhrasesRequest);
-		        detectKeyPhrasesResult.getKeyPhrases().forEach(System.out::println);
-		        System.out.println("End of DetectKeyPhrases\n");
-		       
-		    }
-	}
-	
-	
 //	@Component
-//	class HotelCommandLineRunner implements CommandLineRunner{
+//	class CompCommandLineRunner implements CommandLineRunner{
+//		 @Override
+//		    public void run(String... strings)throws Exception{
+//			 	String text = "It is raining today in Seattle";
 //
-//	    private final HotelRepository repository;
+//		        // Create credentials using a provider chain. For more information, see
+//		        // https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html
+//		        AWSCredentialsProvider awsCreds = DefaultAWSCredentialsProviderChain.getInstance();
 //
-//	    public HotelCommandLineRunner(HotelRepository repository){
-//	        this.repository = repository;
-//	    }
+//		        AmazonComprehend comprehendClient =
+//		            AmazonComprehendClientBuilder.standard()
+//		                                         .withCredentials(awsCreds)
+//		                                         .withRegion("us-east-1")
+//		                                         .build();
 //
-//	    @Override
-//	    public void run(String... strings)throws Exception{
+//		        // Call detectKeyPhrases API
+//		        System.out.println("Calling DetectKeyPhrases");
+//		        DetectKeyPhrasesRequest detectKeyPhrasesRequest = new DetectKeyPhrasesRequest().withText(text)
+//		                                                                                       .withLanguageCode("en");
+//		        DetectKeyPhrasesResult detectKeyPhrasesResult = comprehendClient.detectKeyPhrases(detectKeyPhrasesRequest);
+//		        detectKeyPhrasesResult.getKeyPhrases().forEach(System.out::println);
+//		        System.out.println("End of DetectKeyPhrases\n");
 //
-//	        Stream.of("Conrad","Hilton","Shilla","Hayatt","Westin","Sangrila").forEach(name-> repository.save(new Hotel(name)));
-//
-//	        repository.findAll().forEach(System.out::println);
-//	    }
+//		    }
 //	}
+	
+	
+	@Component
+	class HotelCommandLineRunner implements CommandLineRunner{
+
+	    private final HotelRepository repository;
+
+	    public HotelCommandLineRunner(HotelRepository repository){
+	        this.repository = repository;
+	    }
+
+	    @Override
+	    public void run(String... strings)throws Exception{
+
+	        Stream.of("Conrad","Hilton","Shilla","Hayatt","Westin","Sangrila").forEach(name-> repository.save(new Hotel(name)));
+
+	        repository.findAll().forEach(System.out::println);
+	    }
+	}
 	
 	
 //	@Component
