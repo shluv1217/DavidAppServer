@@ -1,18 +1,15 @@
 package DavidApp.DavidAppServer;
 
 import java.util.stream.Stream;
-
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Component;
-
 import DavidApp.DavidAppServer.model.Hotel;
 import DavidApp.DavidAppServer.model.Text;
 import DavidApp.DavidAppServer.repository.HotelRepository;
 import DavidApp.DavidAppServer.repository.TextRepository;
 import DavidApp.DavidAppServer.App;
-
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 import com.amazonaws.services.comprehend.AmazonComprehend;
@@ -21,6 +18,9 @@ import com.amazonaws.services.comprehend.model.DetectDominantLanguageRequest;
 import com.amazonaws.services.comprehend.model.DetectDominantLanguageResult;
 import com.amazonaws.services.comprehend.model.DetectKeyPhrasesRequest;
 import com.amazonaws.services.comprehend.model.DetectKeyPhrasesResult;
+
+
+
 
 @SpringBootApplication
 public class App {

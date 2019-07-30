@@ -11,7 +11,7 @@
   <name>DavidAppServer</name>
   <url>http://maven.apache.org</url>
 
- <parent>
+ 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.5.9.RELEASE</version>
@@ -34,6 +34,13 @@
 	      <type>pom</type>
 	      <scope>import</scope>
 	    </dependency>
+		    <dependency>
+	        <groupId>org.springframework.cloud</groupId>
+	        <artifactId>spring-cloud-dependencies</artifactId>
+	        <version>Brixton.SR5</version>
+	        <type>pom</type>
+	        <scope>import</scope>
+	      </dependency>
 	  </dependencies>
 	</dependencyManagement>
 	
@@ -76,9 +83,15 @@
 		  <dependency>
 		    <groupId>com.amazonaws</groupId>
 		    <artifactId>aws-java-sdk-comprehend</artifactId>
+		  </dependency>	  
+		  <dependency>
+		     <groupId>org.springframework.cloud</groupId>
+		     <artifactId>spring-cloud-starter-zuul</artifactId>
 		  </dependency>
-
+		  
 	</dependencies>
+	
+	
 
 	<build>
 		<plugins>
