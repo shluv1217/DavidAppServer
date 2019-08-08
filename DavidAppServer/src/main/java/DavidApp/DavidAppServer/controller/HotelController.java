@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import DavidApp.DavidAppServer.model.Hotel;
 import DavidApp.DavidAppServer.repository.HotelRepository;
@@ -23,8 +25,17 @@ public class HotelController{
     }
 
     @GetMapping("/good-hotels")
-    @CrossOrigin(origins = {"http://localhost:3000", "http://localhost:5000"})
+    @CrossOrigin(origins = {"http://localhost:3000", "http://localhost:5000", "http://localhost:8080"})
     Collection<Hotel> goodhotels(){
+    	
+    	 Logger logger = LoggerFactory.getLogger("chapters.introduction.HelloWorld1");
+    	 
+	     logger.trace("Hello world.");
+	     logger.debug("Hello world."); 
+	     logger.info("Hello world.");
+	     logger.warn("Hello world.");
+	     logger.error("Hello world.");
+
 
         return repository.findAll().stream().filter(this::isGreat).collect(Collectors.toList());
     }
