@@ -1,28 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="15cbaa07-c7a7-4aba-8db6-31eb82e009e6" name="Default" comment="logback update">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DavidAppServer-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/DavidAppServer-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DavidAppServer-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/DavidAppServer-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DavidApp/DavidAppServer/App.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DavidApp/DavidAppServer/controller/BookApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DavidApp/DavidAppServer/controller/GreetingController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DavidApp/DavidAppServer/controller/HomeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DavidApp/DavidAppServer/controller/HotelController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DavidApp/DavidAppServer/model/Greeting.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DavidApp/DavidAppServer/model/Hotel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DavidApp/DavidAppServer/model/Image.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DavidApp/DavidAppServer/model/Text.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DavidApp/DavidAppServer/repository/HotelRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DavidApp/DavidAppServer/repository/ImageRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DavidApp/DavidAppServer/repository/TextRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DavidApp/DavidAppServer/service/ImageService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/DavidApp.DavidAppServer.AppTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/DavidApp.DavidAppServer.AppTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-DavidApp.DavidAppServer.AppTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-DavidApp.DavidAppServer.AppTest.xml" afterDir="false" />
-    </list>
+    <list default="true" id="15cbaa07-c7a7-4aba-8db6-31eb82e009e6" name="Default" comment="logback update" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +47,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Dockerfile">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
@@ -95,7 +74,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/DavidApp/DavidAppServer/App.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="243">
@@ -172,7 +151,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
@@ -182,7 +161,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -195,6 +173,7 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -347,6 +326,7 @@
       <workItem from="1565051268231" duration="2669000" />
       <workItem from="1565315670961" duration="253000" />
       <workItem from="1565525748715" duration="554000" />
+      <workItem from="1566460962695" duration="1305000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1564468255363</created>
@@ -373,7 +353,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16725000" />
+    <option name="totallyTimeSpent" value="18030000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -382,7 +362,7 @@
       <window_info id="Designer" order="1" />
       <window_info id="UI Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="4" visible="true" weight="0.26037195" />
+      <window_info active="true" content_ui="combo" id="Project" order="4" visible="true" weight="0.21959943" />
       <window_info id="Structure" order="5" weight="0.24964234" />
       <window_info id="Image Layers" order="6" />
       <window_info id="Web" order="7" side_tool="true" />
@@ -412,7 +392,7 @@
       <window_info anchor="right" id="Commander" order="8" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="9" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="10" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="11" visible="true" weight="0.25822604" />
+      <window_info anchor="right" id="Maven" order="11" visible="true" weight="0.32689556" />
     </layout>
     <layout-to-restore>
       <window_info id="Web" order="0" side_tool="true" />
@@ -476,13 +456,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Dockerfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="44" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/DavidApp/DavidAppServer/controller/GreetingController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -522,6 +495,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
           <caret line="91" column="46" selection-start-line="91" selection-start-column="46" selection-end-line="91" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="44" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
         </state>
       </provider>
     </entry>
