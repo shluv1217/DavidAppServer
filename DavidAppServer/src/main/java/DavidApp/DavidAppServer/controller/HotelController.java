@@ -8,6 +8,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.amazonaws.AmazonClientException;
+import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.profile.ProfileCredentialsProvider;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import DavidApp.DavidAppServer.model.Hotel;
@@ -36,6 +41,7 @@ public class HotelController{
 	}
 	
 	logger.info("-------------------------------");
+	
 	
 
         return repository.findAll().stream().filter(this::isGreat).collect(Collectors.toList());
