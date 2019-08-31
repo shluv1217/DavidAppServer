@@ -78,7 +78,13 @@
 		  <dependency>
 		    <groupId>com.amazonaws</groupId>
 		    <artifactId>aws-java-sdk-comprehend</artifactId>
-		  </dependency>	  
+		  </dependency>	
+		  <dependency>
+			 <groupId>com.amazonaws</groupId>
+			 <artifactId>aws-java-sdk-rekognition</artifactId>
+			 <version>1.11.237</version>
+		  </dependency>
+	  
 	</dependencies>
 	
 	
