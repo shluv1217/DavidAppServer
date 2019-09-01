@@ -12,12 +12,12 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
-import DavidApp.DavidAppServer.controller.AwsTestController;
+import DavidApp.DavidAppServer.controller.AwsRecogController;
 import DavidApp.DavidAppServer.repository.HotelRepository;
 
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(AwsTestController.class)
+@WebMvcTest(AwsRecogController.class)
 public class AwsAPITest {
 	
     @Autowired
