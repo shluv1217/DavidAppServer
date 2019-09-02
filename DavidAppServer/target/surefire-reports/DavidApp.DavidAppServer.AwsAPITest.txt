@@ -1,12 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: DavidApp.DavidAppServer.AwsAPITest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.954 sec <<< FAILURE! - in DavidApp.DavidAppServer.AwsAPITest
-awsAPITest(DavidApp.DavidAppServer.AwsAPITest)  Time elapsed: 0.034 sec  <<< FAILURE!
-java.lang.AssertionError: Status expected:<200> but was:<404>
-	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:54)
-	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:81)
-	at org.springframework.test.web.servlet.result.StatusResultMatchers$10.match(StatusResultMatchers.java:665)
-	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:171)
-	at DavidApp.DavidAppServer.AwsAPITest.awsAPITest(AwsAPITest.java:37)
-
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.253 sec - in DavidApp.DavidAppServer.AwsAPITest

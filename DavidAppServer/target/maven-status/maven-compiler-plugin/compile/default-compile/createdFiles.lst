@@ -14,5 +14,6 @@ DavidApp/DavidAppServer/repository/ImageRepository.class
 DavidApp/DavidAppServer/controller/AwsRecogController.class
 DavidApp/DavidAppServer/repository/ImageConfRepository.class
 DavidApp/DavidAppServer/controller/HotelController.class
+DavidApp/DavidAppServer/App$ImageCommandLineRunner.class
 DavidApp/DavidAppServer/repository/TextRepository.class
 DavidApp/DavidAppServer/controller/HomeController.class

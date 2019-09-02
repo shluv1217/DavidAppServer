@@ -12,6 +12,9 @@ public class ImageConf {
 	private String name;
 	private String score;
 	
+	public ImageConf(){
+    }
+	
 	
 	public ImageConf(String name, String score){
 		this.name = name;

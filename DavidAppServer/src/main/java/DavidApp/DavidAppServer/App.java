@@ -1,23 +1,44 @@
 package DavidApp.DavidAppServer;
 
+import java.util.List;
 import java.util.stream.Stream;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Component;
 import DavidApp.DavidAppServer.model.Hotel;
+import DavidApp.DavidAppServer.model.ImageConf;
 import DavidApp.DavidAppServer.model.Text;
 import DavidApp.DavidAppServer.repository.HotelRepository;
+import DavidApp.DavidAppServer.repository.ImageConfRepository;
 import DavidApp.DavidAppServer.repository.TextRepository;
 import DavidApp.DavidAppServer.App;
+import DavidApp.DavidAppServer.controller.AwsRecogController;
+
+import com.amazonaws.AmazonClientException;
+import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
+import com.amazonaws.auth.AWSStaticCredentialsProvider;
 import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
+import com.amazonaws.auth.profile.ProfileCredentialsProvider;
+import com.amazonaws.regions.Regions;
 import com.amazonaws.services.comprehend.AmazonComprehend;
 import com.amazonaws.services.comprehend.AmazonComprehendClientBuilder;
 import com.amazonaws.services.comprehend.model.DetectDominantLanguageRequest;
 import com.amazonaws.services.comprehend.model.DetectDominantLanguageResult;
 import com.amazonaws.services.comprehend.model.DetectKeyPhrasesRequest;
 import com.amazonaws.services.comprehend.model.DetectKeyPhrasesResult;
+import com.amazonaws.services.rekognition.AmazonRekognition;
+import com.amazonaws.services.rekognition.AmazonRekognitionClientBuilder;
+import com.amazonaws.services.rekognition.model.AmazonRekognitionException;
+import com.amazonaws.services.rekognition.model.DetectLabelsRequest;
+import com.amazonaws.services.rekognition.model.DetectLabelsResult;
+import com.amazonaws.services.rekognition.model.Image;
+import com.amazonaws.services.rekognition.model.Label;
+import com.amazonaws.services.rekognition.model.S3Object;
 
 
 
@@ -94,6 +115,80 @@ public class App {
 	        Stream.of("Conrad","Hilton","Shilla","Hayatt","Westin","Sangrila").forEach(name-> repository.save(new Hotel(name)));
 
 	        repository.findAll().forEach(System.out::println);
+	    }
+	}
+	
+	
+	@Component
+	class ImageCommandLineRunner implements CommandLineRunner{
+
+		private final ImageConfRepository imagerepository;
+
+	    public ImageCommandLineRunner(ImageConfRepository repository){
+	        this.imagerepository = repository;
+	    }
+
+	    @Override
+	    public void run(String... strings)throws Exception{
+
+	    	Logger logger = LoggerFactory.getLogger(AwsRecogController.class);
+	  	  
+	  	    String photo = "input.jpg";
+	        String bucket = "davidbucket1217";
+	        
+	        AWSCredentials credentials = null;
+	        
+	   	 
+	        try {
+	            credentials = new ProfileCredentialsProvider("default").getCredentials();
+	        } catch (Exception e) {
+	            throw new AmazonClientException(
+	                    "Cannot load the credentials from the credential profiles file. " +
+	                    "Please make sure that your credentials file is at the correct " +
+	                    "location (/Users/davidshin/.aws/credentials), and is in valid format.",
+	                    e);
+	        }  
+	        
+	        AmazonRekognition rekognitionClient = AmazonRekognitionClientBuilder.standard().withRegion(Regions.AP_NORTHEAST_1)
+	      		  .withCredentials(new AWSStaticCredentialsProvider(credentials)).build();
+	  	  
+	  	  	  	  
+	  	  DetectLabelsRequest request = new DetectLabelsRequest()
+	  	           .withImage(new Image()
+	  	           .withS3Object(new S3Object()
+	  	           .withName(photo).withBucket(bucket)))
+	  	           .withMaxLabels(10)
+	  	           .withMinConfidence(75F);
+	  	  
+	  	  try {
+	  	         DetectLabelsResult result = rekognitionClient.detectLabels(request);
+	  	         List <Label> labels = result.getLabels();
+
+	  	         System.out.println("Detected labels for " + photo);
+	  	         for (Label label: labels) {
+	  	            System.out.println(label.getName() + ": " + label.getConfidence().toString());
+	  	            
+	  	            String name = label.getName();
+	  	            String score = label.getConfidence().toString();
+
+	  	            imagerepository.save(new ImageConf(name, score));
+	  	         }
+	  	         
+	  	         //fetch all customers
+	  	       imagerepository.findAll().forEach(System.out::println);
+//	          	logger.info("Images found with findAll():");
+//	          	logger.info("-------------------------------");
+//	          	for (ImageConf imageconf : repository.findAll()) {
+//	          		logger.info(imageconf.toString());
+//	          	}
+//	          	
+//	          	logger.info("-------------------------------");
+
+	  	         
+	  	         
+	  	      } catch(AmazonRekognitionException e) {
+	  	         e.printStackTrace();
+	  	      }
 	    }
 	}
 	
