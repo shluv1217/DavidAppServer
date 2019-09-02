@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 import DavidApp.DavidAppServer.model.Hotel;
 import DavidApp.DavidAppServer.model.ImageConf;
@@ -117,8 +118,9 @@ public class App {
 	        repository.findAll().forEach(System.out::println);
 	    }
 	}
-	
-	
+
+
+
 	@Component
 	class ImageCommandLineRunner implements CommandLineRunner{
 
@@ -191,6 +193,71 @@ public class App {
 	  	      }
 	    }
 	}
+	
+	
+//	@Bean
+//	public CommandLineRunner demo(ImageConfRepository repository) {
+//		return (args) -> {
+//			Logger logger = LoggerFactory.getLogger(AwsRecogController.class);
+//		  	  
+//	  	    String photo = "input.jpg";
+//	        String bucket = "davidbucket1217";
+//	        
+//	        AWSCredentials credentials = null;
+//	        
+//	   	 
+//	        try {
+//	            credentials = new ProfileCredentialsProvider("default").getCredentials();
+//	        } catch (Exception e) {
+//	            throw new AmazonClientException(
+//	                    "Cannot load the credentials from the credential profiles file. " +
+//	                    "Please make sure that your credentials file is at the correct " +
+//	                    "location (/Users/davidshin/.aws/credentials), and is in valid format.",
+//	                    e);
+//	        }  
+//	        
+//	        AmazonRekognition rekognitionClient = AmazonRekognitionClientBuilder.standard().withRegion(Regions.AP_NORTHEAST_1)
+//	      		  .withCredentials(new AWSStaticCredentialsProvider(credentials)).build();
+//	  	  
+//	  	  	  	  
+//	  	  DetectLabelsRequest request = new DetectLabelsRequest()
+//	  	           .withImage(new Image()
+//	  	           .withS3Object(new S3Object()
+//	  	           .withName(photo).withBucket(bucket)))
+//	  	           .withMaxLabels(10)
+//	  	           .withMinConfidence(75F);
+//	  	  
+//	  	  try {
+//	  	         DetectLabelsResult result = rekognitionClient.detectLabels(request);
+//	  	         List <Label> labels = result.getLabels();
+//
+//	  	         System.out.println("Detected labels for " + photo);
+//	  	         for (Label label: labels) {
+//	  	            System.out.println(label.getName() + ": " + label.getConfidence().toString());
+//	  	            
+//	  	            String name = label.getName();
+//	  	            String score = label.getConfidence().toString();
+//
+//	  	          repository.save(new ImageConf(name, score));
+//	  	         }
+//	  	         
+//	  	         //fetch all customers
+//	  	       repository.findAll().forEach(System.out::println);
+////	          	logger.info("Images found with findAll():");
+////	          	logger.info("-------------------------------");
+////	          	for (ImageConf imageconf : repository.findAll()) {
+////	          		logger.info(imageconf.toString());
+////	          	}
+////	          	
+////	          	logger.info("-------------------------------");
+//
+//	  	         
+//	  	         
+//	  	      } catch(AmazonRekognitionException e) {
+//	  	         e.printStackTrace();
+//	  	      }
+//		};
+//	}
 	
 	
 //	@Component

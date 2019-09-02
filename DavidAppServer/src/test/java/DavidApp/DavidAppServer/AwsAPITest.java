@@ -18,26 +18,26 @@ import DavidApp.DavidAppServer.repository.HotelRepository;
 import DavidApp.DavidAppServer.repository.ImageConfRepository;
 
 
-@RunWith(SpringRunner.class)
-@WebMvcTest(AwsRecogController.class)
+//@RunWith(SpringRunner.class)
+//@WebMvcTest(AwsRecogController.class)
 //@DataJpaTest
 public class AwsAPITest {
 	
-    @Autowired
-    private MockMvc mvc;
-    
-    @MockBean
-    private HotelRepository hotelrepository;   
-    
-    @MockBean
-    private ImageConfRepository imagerecogrepository;   
-    
-    @Test
-    public void awsAPITest() throws Exception {
-
-        mvc.perform(get("/awsRecogTest"))
-            .andExpect(status().isOk()).andDo(print());
-    }
+//    @Autowired
+//    private MockMvc mvc;
+//    
+//    @MockBean
+//    private HotelRepository hotelrepository;   
+//    
+//    @MockBean
+//    private ImageConfRepository imagerecogrepository;   
+//    
+//    @Test
+//    public void awsAPITest() throws Exception {
+//
+//        mvc.perform(get("/awsRecogTest"))
+//            .andExpect(status().isOk()).andDo(print());
+//    }
 
    
     

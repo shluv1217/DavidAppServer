@@ -16,26 +16,26 @@ import DavidApp.DavidAppServer.model.ImageConf;
 import DavidApp.DavidAppServer.repository.HotelRepository;
 
 
-@RunWith(SpringRunner.class)
-@WebMvcTest(HotelController.class)
+//@RunWith(SpringRunner.class)
+//@WebMvcTest(HotelController.class)
 public class DavidTest {
-	
-    @Autowired
-    private MockMvc mvc;
-    
-    @MockBean
-    private HotelRepository repository;   
-    
-    @MockBean
-    private ImageConf imageconf;   
-    
-	
-    @Test
-    public void awsAPITest() throws Exception {
-
-        mvc.perform(get("/good-hotels"))
-            .andExpect(status().isOk());
-    }
+//	
+//    @Autowired
+//    private MockMvc mvc;
+//    
+//    @MockBean
+//    private HotelRepository repository;   
+//    
+//    @MockBean
+//    private ImageConf imageconf;   
+//    
+//	
+//    @Test
+//    public void awsAPITest() throws Exception {
+//
+//        mvc.perform(get("/good-hotels"))
+//            .andExpect(status().isOk());
+//    }
 
    
     
