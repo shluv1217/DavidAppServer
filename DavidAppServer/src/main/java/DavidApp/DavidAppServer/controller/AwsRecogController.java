@@ -10,8 +10,10 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Stream;
 
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,19 +32,32 @@ import com.amazonaws.services.rekognition.model.Image;
 import com.amazonaws.services.rekognition.model.Label;
 import com.amazonaws.services.rekognition.model.S3Object;
 
+import DavidApp.DavidAppServer.model.Hotel;
+import DavidApp.DavidAppServer.model.ImageConf;
+import DavidApp.DavidAppServer.repository.HotelRepository;
+import DavidApp.DavidAppServer.repository.ImageConfRepository;
 
 
 @RestController
-@SpringBootApplication
 public class AwsRecogController {
+  private ImageConfRepository repository;
 
-  @RequestMapping(value = "/available")
-  public String available() throws IOException {
+  public AwsRecogController (ImageConfRepository repository){
+        this.repository = repository;
+  }
+
+	
+
+  @RequestMapping(value = "/awsRecogTest")
+  public String awsrecogtest() throws IOException {
+	  
+	  Logger logger = LoggerFactory.getLogger(AwsRecogController.class);
 	  
 	  String photo = "input.jpg";
       String bucket = "davidbucket1217";
       
       AWSCredentials credentials = null;
+      
  	 
       try {
           credentials = new ProfileCredentialsProvider("default").getCredentials();
@@ -74,7 +89,34 @@ public class AwsRecogController {
 	         System.out.println("Detected labels for " + photo);
 	         for (Label label: labels) {
 	            System.out.println(label.getName() + ": " + label.getConfidence().toString());
+	            
+	            String name = label.getName();
+	            String score = label.getConfidence().toString();
+//	            
+//	            repository.save(new ImageConf("test1", "test1"));
+//	            
+//	            repository.findByName(label.getName()).forEach(bauer -> {
+//	            	System.out.println(bauer.toString());
+//				});
+	            
+	            //Stream.of("Conrad","Hilton","Shilla","Hayatt","Westin","Sangrila").forEach(name-> repository.save(new ImageConf(name)));
+
+	            repository.save(new ImageConf(name, score));
+		        //repository.findAll().forEach(System.out::println);
+	            
 	         }
+	         
+	         //fetch all customers
+        	logger.info("Hotels found with findAll():");
+        	logger.info("-------------------------------");
+        	for (ImageConf imageconf : repository.findAll()) {
+        		logger.info(imageconf.toString());
+        	}
+        	
+        	logger.info("-------------------------------");
+
+	         
+	         
 	      } catch(AmazonRekognitionException e) {
 	         e.printStackTrace();
 	      }

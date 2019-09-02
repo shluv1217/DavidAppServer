@@ -1,7 +1,9 @@
 /Users/davidshin/git/DavidAppServer/DavidAppServer/src/main/java/DavidApp/DavidAppServer/model/Greeting.java
+/Users/davidshin/git/DavidAppServer/DavidAppServer/src/main/java/DavidApp/DavidAppServer/controller/AwsTestController.java
 /Users/davidshin/git/DavidAppServer/DavidAppServer/src/main/java/DavidApp/DavidAppServer/App.java
 /Users/davidshin/git/DavidAppServer/DavidAppServer/src/main/java/DavidApp/DavidAppServer/controller/HomeController.java
 /Users/davidshin/git/DavidAppServer/DavidAppServer/src/main/java/DavidApp/DavidAppServer/model/Text.java
+/Users/davidshin/git/DavidAppServer/DavidAppServer/src/main/java/DavidApp/DavidAppServer/repository/ImageConfRepository.java
 /Users/davidshin/git/DavidAppServer/DavidAppServer/src/main/java/DavidApp/DavidAppServer/model/Hotel.java
 /Users/davidshin/git/DavidAppServer/DavidAppServer/src/main/java/DavidApp/DavidAppServer/controller/BookApplication.java
 /Users/davidshin/git/DavidAppServer/DavidAppServer/src/main/java/DavidApp/DavidAppServer/repository/HotelRepository.java
@@ -9,5 +11,7 @@
 /Users/davidshin/git/DavidAppServer/DavidAppServer/src/main/java/DavidApp/DavidAppServer/repository/TextRepository.java
 /Users/davidshin/git/DavidAppServer/DavidAppServer/src/main/java/DavidApp/DavidAppServer/controller/HotelController.java
 /Users/davidshin/git/DavidAppServer/DavidAppServer/src/main/java/DavidApp/DavidAppServer/repository/ImageRepository.java
+/Users/davidshin/git/DavidAppServer/DavidAppServer/src/main/java/DavidApp/DavidAppServer/controller/AwsRecogController.java
 /Users/davidshin/git/DavidAppServer/DavidAppServer/src/main/java/DavidApp/DavidAppServer/model/Image.java
 /Users/davidshin/git/DavidAppServer/DavidAppServer/src/main/java/DavidApp/DavidAppServer/service/ImageService.java
+/Users/davidshin/git/DavidAppServer/DavidAppServer/src/main/java/DavidApp/DavidAppServer/model/ImageConf.java

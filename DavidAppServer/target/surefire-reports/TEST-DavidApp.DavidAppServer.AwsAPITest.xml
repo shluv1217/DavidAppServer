@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="DavidApp.DavidAppServer.AwsAPITest" time="0.034" tests="1" errors="0" skipped="0" failures="1">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="java.vm.version" value="11.0.2+9-LTS"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home/lib"/>
+    <property name="gopherProxySet" value="false"/>
+    <property name="maven.multiModuleProjectDirectory" value="/Users/davidshin/git/DavidAppServer/DavidAppServer"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="java.rmi.server.randomIDs" value="true"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="path.separator" value=":"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="user.country" value="KR"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/Users/davidshin/git/DavidAppServer/DavidAppServer"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="java.runtime.version" value="11.0.2+9-LTS"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.io.tmpdir" value="/var/folders/hv/dws9bg113jn2j56wjrs1gkp80000gn/T/"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="classworlds.conf" value="/Users/davidshin/eclipse-workspace/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf17846478740481099303.tmp"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/davidshin/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="jdk.debug" value="release"/>
+    <property name="java.class.version" value="55.0"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.14.5"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16|lx.astxsvc.com|*.lx.astxsvc.com"/>
+    <property name="user.home" value="/Users/davidshin"/>
+    <property name="user.timezone" value="Asia/Seoul"/>
+    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.specification.version" value="11"/>
+    <property name="user.name" value="davidshin"/>
+    <property name="java.class.path" value="/Users/davidshin/.p2/pool/plugins/org.eclipse.m2e.maven.runtime_1.10.0.20181127-2120/jars/plexus-classworlds-2.5.2.jar"/>
+    <property name="java.vm.specification.version" value="11"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B clean package"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="11.0.2"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="/Users/davidshin/git/DavidAppServer/DavidAppServer/EMBEDDED"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.version.date" value="2019-01-15"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.java.com/bugreport/"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="java.vendor.version" value="18.9"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16|lx.astxsvc.com|*.lx.astxsvc.com"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16|lx.astxsvc.com|*.lx.astxsvc.com"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase name="awsAPITest" classname="DavidApp.DavidAppServer.AwsAPITest" time="0.034">
+    <failure message="Status expected:&lt;200&gt; but was:&lt;404&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Status expected:<200> but was:<404>
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:54)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:81)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers$10.match(StatusResultMatchers.java:665)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:171)
+	at DavidApp.DavidAppServer.AwsAPITest.awsAPITest(AwsAPITest.java:37)
+]]></failure>
+    <system-out><![CDATA[17:33 INFO  o.s.b.t.a.w.s.WebMvcTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [DavidApp.DavidAppServer.AwsAPITest], using SpringBootContextLoader
+17:33 INFO  o.s.t.c.s.AbstractContextLoader - Could not detect default resource locations for test class [DavidApp.DavidAppServer.AwsAPITest]: no resource found for suffixes {-context.xml, Context.groovy}.
+17:33 INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [DavidApp.DavidAppServer.AwsAPITest]: AwsAPITest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+17:33 INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration DavidApp.DavidAppServer.App for test class DavidApp.DavidAppServer.AwsAPITest
+17:33 INFO  o.s.b.t.a.w.s.WebMvcTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+17:33 INFO  o.s.b.t.a.w.s.WebMvcTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@6661d8c0, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@310b2b6f, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@6909f6be, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6b5ab2f2, org.springframework.test.context.transaction.TransactionalTestExecutionListener@315c081, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@6b2dd3df, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@4db77402, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@73c48264, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@5ef85555, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@5bcec67e, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@2dafae61, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@7a2fce12]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+&amp#27;[32m :: Spring Boot :: &amp#27;[39m      &amp#27;[2m (v1.5.9.RELEASE)&amp#27;[0;39m
+
+17:33 INFO  DavidApp.DavidAppServer.AwsAPITest - Starting AwsAPITest on Davids-MacBook-Air.local with PID 13798 (started by davidshin in /Users/davidshin/git/DavidAppServer/DavidAppServer)
+17:33 INFO  DavidApp.DavidAppServer.AwsAPITest - No active profile set, falling back to default profiles: default
+17:33 INFO  o.s.w.c.s.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@36c7cbe1: startup date [Sun Sep 01 17:33:01 KST 2019]; root of context hierarchy
+17:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@36c7cbe1: startup date [Sun Sep 01 17:33:01 KST 2019]; root of context hierarchy
+17:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/awsRecogTest]}" onto public java.lang.String DavidApp.DavidAppServer.controller.AwsRecogController.awsrecogtest() throws java.io.IOException
+17:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+17:33 INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+17:33 INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+17:33 INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+17:33 INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+17:33 INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring FrameworkServlet ''
+17:33 INFO  o.s.t.w.s.TestDispatcherServlet - FrameworkServlet '': initialization started
+17:33 INFO  o.s.t.w.s.TestDispatcherServlet - FrameworkServlet '': initialization completed in 13 ms
+17:33 INFO  DavidApp.DavidAppServer.AwsAPITest - Started AwsAPITest in 0.849 seconds (JVM running for 6.175)
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /available
+       Parameters = {}
+          Headers = {}
+
+Handler:
+             Type = org.springframework.web.servlet.resource.ResourceHttpRequestHandler
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 404
+    Error message = null
+          Headers = {}
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+]]></system-out>
+  </testcase>
+</testsuite>
