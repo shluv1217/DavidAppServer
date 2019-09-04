@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="15cbaa07-c7a7-4aba-8db6-31eb82e009e6" name="Default" comment="logback update">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DavidApp/DavidAppServer/App$HotelCommandLineRunner.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DavidApp/DavidAppServer/App.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DavidApp/DavidAppServer/controller/BookApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DavidApp/DavidAppServer/controller/GreetingController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DavidApp/DavidAppServer/controller/HomeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DavidApp/DavidAppServer/controller/HotelController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DavidApp/DavidAppServer/model/Greeting.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DavidApp/DavidAppServer/model/Hotel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DavidApp/DavidAppServer/model/Image.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DavidApp/DavidAppServer/model/Text.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DavidApp/DavidAppServer/repository/HotelRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DavidApp/DavidAppServer/repository/ImageRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DavidApp/DavidAppServer/repository/TextRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DavidApp/DavidAppServer/service/ImageService.class" beforeDir="false" />
-    </list>
+    <list default="true" id="15cbaa07-c7a7-4aba-8db6-31eb82e009e6" name="Default" comment="logback update" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -128,8 +112,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/DavidApp/DavidAppServer/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="197" column="9" lean-forward="true" selection-start-line="197" selection-start-column="9" selection-end-line="197" selection-end-column="9" />
+            <state relative-caret-position="-743">
+              <caret line="137" column="9" lean-forward="true" selection-start-line="137" selection-start-column="9" selection-end-line="137" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -442,7 +426,7 @@
       <workItem from="1566742138635" duration="741000" />
       <workItem from="1566782758044" duration="1006000" />
       <workItem from="1567402710091" duration="313000" />
-      <workItem from="1567407436081" duration="1034000" />
+      <workItem from="1567407436081" duration="1613000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1564468255363</created>
@@ -469,7 +453,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27918000" />
+    <option name="totallyTimeSpent" value="28497000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -637,8 +621,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/DavidApp/DavidAppServer/App.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="197" column="9" lean-forward="true" selection-start-line="197" selection-start-column="9" selection-end-line="197" selection-end-column="9" />
+        <state relative-caret-position="-743">
+          <caret line="137" column="9" lean-forward="true" selection-start-line="137" selection-start-column="9" selection-end-line="137" selection-end-column="9" />
         </state>
       </provider>
     </entry>

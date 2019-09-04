@@ -132,27 +132,30 @@ public class App {
 
 	    @Override
 	    public void run(String... strings)throws Exception{
+	    	
 
-	    	Logger logger = LoggerFactory.getLogger(AwsRecogController.class);
-	  	  
-	  	    String photo = "input.jpg";
-	        String bucket = "davidbucket1217";
+    	Logger logger = LoggerFactory.getLogger(AwsRecogController.class);
+  	  
+  	    String photo = "input.jpg";
+        String bucket = "davidbucket1217";
+        
+        AWSCredentials credentials = null;
+        
+   	 
+        try {
+            credentials = new ProfileCredentialsProvider("default").getCredentials();
+        } catch (Exception e) {
+            throw new AmazonClientException(
+                    "Cannot load the credentials from the credential profiles file. " +
+                    "Please make sure that your credentials file is at the correct " +
+                    "location (/Users/davidshin/.aws/credentials), and is in valid format.",
+                    e);
+        }  
+        
+        AmazonRekognition rekognitionClient = AmazonRekognitionClientBuilder.standard().withRegion(Regions.AP_NORTHEAST_1)
+      		  .withCredentials(new AWSStaticCredentialsProvider(credentials)).build();
 	        
-	        AWSCredentials credentials = null;
-	        
-	   	 
-	        try {
-	            credentials = new ProfileCredentialsProvider("default").getCredentials();
-	        } catch (Exception e) {
-	            throw new AmazonClientException(
-	                    "Cannot load the credentials from the credential profiles file. " +
-	                    "Please make sure that your credentials file is at the correct " +
-	                    "location (/Users/davidshin/.aws/credentials), and is in valid format.",
-	                    e);
-	        }  
-	        
-	        AmazonRekognition rekognitionClient = AmazonRekognitionClientBuilder.standard().withRegion(Regions.AP_NORTHEAST_1)
-	      		  .withCredentials(new AWSStaticCredentialsProvider(credentials)).build();
+	       
 	  	  
 	  	  	  	  
 	  	  DetectLabelsRequest request = new DetectLabelsRequest()
