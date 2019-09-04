@@ -12,9 +12,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 import DavidApp.DavidAppServer.model.Hotel;
 import DavidApp.DavidAppServer.model.ImageConf;
+import DavidApp.DavidAppServer.model.RecogImage;
 import DavidApp.DavidAppServer.model.Text;
 import DavidApp.DavidAppServer.repository.HotelRepository;
 import DavidApp.DavidAppServer.repository.ImageConfRepository;
+import DavidApp.DavidAppServer.repository.ImageRecogRepository;
 import DavidApp.DavidAppServer.repository.TextRepository;
 import DavidApp.DavidAppServer.App;
 import DavidApp.DavidAppServer.controller.AwsRecogController;
@@ -131,11 +133,14 @@ public class App {
 	class ImageCommandLineRunner implements CommandLineRunner{
 
 		private final ImageConfRepository imagerepository;
+		private final ImageRecogRepository imagerecogrepository;
 		
 
-	    public ImageCommandLineRunner(ImageConfRepository repository){
-	        this.imagerepository = repository;
+	    public ImageCommandLineRunner(ImageConfRepository repository1, ImageRecogRepository repository2){
+	        this.imagerepository = repository1;
+	        this.imagerecogrepository = repository2;
 	    }
+	    
 	    
 
 	    @Override
@@ -190,6 +195,8 @@ public class App {
                  
                  photo = objectSummary.getKey();
                  
+                 imagerecogrepository.save(new RecogImage(photo));
+                 
                  DetectLabelsRequest request = new DetectLabelsRequest()
       	  	           .withImage(new Image()
       	  	           .withS3Object(new S3Object()
@@ -197,32 +204,32 @@ public class App {
       	  	           .withMaxLabels(10)
       	  	           .withMinConfidence(75F);
       	  	  
-      	  	  try {
-      	  	         DetectLabelsResult result = rekognitionClient.detectLabels(request);
-      	  	         List <Label> labels = result.getLabels();
-
-      	  	         System.out.println("Detected labels for " + photo);
-      	  	         for (Label label: labels) {
-      	  	            System.out.println(label.getName() + ": " + label.getConfidence().toString());
-      	  	            
-      	  	            String name = label.getName();
-      	  	            String score = label.getConfidence().toString();
-
-      	  	            imagerepository.save(new ImageConf(name, score));
-      	  	         }
-      	  	         
-      	  	         //fetch all customers
-      	  	       imagerepository.findAll().forEach(System.out::println);
-//      	          	logger.info("Images found with findAll():");
-//      	          	logger.info("-------------------------------");
-//      	          	for (ImageConf imageconf : repository.findAll()) {
-//      	          		logger.info(imageconf.toString());
-//      	          	}
-//      	          	
-//      	          	logger.info("-------------------------------");       
-      	  	      } catch(AmazonRekognitionException e) {
-      	  	         e.printStackTrace();
-      	  	      }
+	      	  	  try {
+	      	  	         DetectLabelsResult result = rekognitionClient.detectLabels(request);
+	      	  	         List <Label> labels = result.getLabels();
+	
+	      	  	         System.out.println("Detected labels for " + photo);
+	      	  	         for (Label label: labels) {
+	      	  	            System.out.println(label.getName() + ": " + label.getConfidence().toString());
+	      	  	            
+	      	  	            String name = label.getName();
+	      	  	            String score = label.getConfidence().toString();
+	
+	      	  	            imagerepository.save(new ImageConf(name, score));
+	      	  	         }
+	      	  	         
+	      	  	         //fetch all customers
+	      	  	       imagerepository.findAll().forEach(System.out::println);
+	//      	          	logger.info("Images found with findAll():");
+	//      	          	logger.info("-------------------------------");
+	//      	          	for (ImageConf imageconf : repository.findAll()) {
+	//      	          		logger.info(imageconf.toString());
+	//      	          	}
+	//      	          	
+	//      	          	logger.info("-------------------------------");       
+	      	  	      } catch(AmazonRekognitionException e) {
+	      	  	         e.printStackTrace();
+	      	  	      }
       	  	  
              }
              
