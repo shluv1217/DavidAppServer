@@ -21,7 +21,7 @@ public class HotelController{
     }
 
     @GetMapping("/good-hotels")
-    @CrossOrigin(origins = {"http://localhost:3000", "http://localhost:5000", "http://localhost:8080"})
+    @CrossOrigin(origins = {"http://localhost:3000", "http://localhost:5000"})
     Collection<Hotel> goodhotels(){
     	
 	Logger logger = LoggerFactory.getLogger(HotelController.class);

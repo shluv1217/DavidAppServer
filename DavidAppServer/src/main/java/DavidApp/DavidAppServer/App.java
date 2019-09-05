@@ -129,122 +129,115 @@ public class App {
 
 
 
-	@Component
-	class ImageCommandLineRunner implements CommandLineRunner{
-
-		private final ImageConfRepository imagerepository;
-		private final ImageRecogRepository imagerecogrepository;
-		
-
-	    public ImageCommandLineRunner(ImageConfRepository repository1, ImageRecogRepository repository2){
-	        this.imagerepository = repository1;
-	        this.imagerecogrepository = repository2;
-	    }
-	    
-	    
-
-	    @Override
-	    public void run(String... strings)throws Exception{
-	    	
-
-    	Logger logger = LoggerFactory.getLogger(AwsRecogController.class);
-  	  
-  	    String photo = "input.jpg";
-        String bucket = "davidbucket1217";
-        
-        AWSCredentials credentials = null;
-        Bucket bucket1 = null;
-        
-   	 
-        try {
-            credentials = new ProfileCredentialsProvider("default").getCredentials();
-        } catch (Exception e) {
-            throw new AmazonClientException(
-                    "Cannot load the credentials from the credential profiles file. " +
-                    "Please make sure that your credentials file is at the correct " +
-                    "location (/Users/davidshin/.aws/credentials), and is in valid format.",
-                    e);
-        }  
-        
-         AmazonRekognition rekognitionClient = AmazonRekognitionClientBuilder.standard().withRegion(Regions.AP_NORTHEAST_1)
-      		  .withCredentials(new AWSStaticCredentialsProvider(credentials)).build();
-	     
-         
-         //Loading S3 buckets
-         final AmazonS3 s3 = AmazonS3ClientBuilder.standard().withRegion(Regions.AP_NORTHEAST_1)
-         		  .withCredentials(new AWSStaticCredentialsProvider(credentials)).build();
-         List<Bucket> buckets = s3.listBuckets();
-         System.out.println("Your Amazon S3 buckets are:");
-         for (Bucket b : buckets) {
-             System.out.println("* " + b.getName());
-         }
-         
-         ListObjectsRequest listObjectsRequest = new ListObjectsRequest();
-         listObjectsRequest.setBucketName(bucket);
-         
-         ObjectListing objects = s3.listObjects(listObjectsRequest);
-         
-         
-         
-         	do {
-             objects = s3.listObjects(listObjectsRequest);
-             
-             for(S3ObjectSummary objectSummary : objects.getObjectSummaries()) {
-                 logger.info("keyname : " + objectSummary.getKey());
-                 //employeeImageList.add(objectSummary.getKey());
-                 
-                 photo = objectSummary.getKey();
-                 
-                 imagerecogrepository.save(new RecogImage(photo));
-                 
-                 DetectLabelsRequest request = new DetectLabelsRequest()
-      	  	           .withImage(new Image()
-      	  	           .withS3Object(new S3Object()
-      	  	           .withName(photo).withBucket(bucket)))
-      	  	           .withMaxLabels(10)
-      	  	           .withMinConfidence(75F);
-      	  	  
-	      	  	  try {
-	      	  	         DetectLabelsResult result = rekognitionClient.detectLabels(request);
-	      	  	         List <Label> labels = result.getLabels();
-	
-	      	  	         System.out.println("Detected labels for " + photo);
-	      	  	         for (Label label: labels) {
-	      	  	            System.out.println(label.getName() + ": " + label.getConfidence().toString());
-	      	  	            
-	      	  	            String name = label.getName();
-	      	  	            String score = label.getConfidence().toString();
-	
-	      	  	            imagerepository.save(new ImageConf(name, score));
-	      	  	         }
-	      	  	         
-	      	  	         //fetch all customers
-	      	  	       imagerepository.findAll().forEach(System.out::println);
-	//      	          	logger.info("Images found with findAll():");
-	//      	          	logger.info("-------------------------------");
-	//      	          	for (ImageConf imageconf : repository.findAll()) {
-	//      	          		logger.info(imageconf.toString());
-	//      	          	}
-	//      	          	
-	//      	          	logger.info("-------------------------------");       
-	      	  	      } catch(AmazonRekognitionException e) {
-	      	  	         e.printStackTrace();
-	      	  	      }
-      	  	  
-             }
-             
-             listObjectsRequest.setMarker(objects.getNextMarker());
-         } while(objects.isTruncated());
-
-
-
-         
-
-	  	  	  	  
-	  	  
-	  	  
-	    }
-	}
+//	@Component
+//	class ImageCommandLineRunner implements CommandLineRunner{
+//
+//		private final ImageConfRepository imagerepository;
+//		private final ImageRecogRepository imagerecogrepository;
+//		
+//
+//	    public ImageCommandLineRunner(ImageConfRepository repository1, ImageRecogRepository repository2){
+//	        this.imagerepository = repository1;
+//	        this.imagerecogrepository = repository2;
+//	    }
+//	    
+//	    
+//
+//	    @Override
+//	    public void run(String... strings)throws Exception{
+//	    	
+//
+//    	Logger logger = LoggerFactory.getLogger(AwsRecogController.class);
+//  	  
+//  	    String photo = "input.jpg";
+//        String bucket = "davidbucket1217";
+//        
+//        AWSCredentials credentials = null;
+//        Bucket bucket1 = null;
+//        
+//   	 
+//        try {
+//            credentials = new ProfileCredentialsProvider("default").getCredentials();
+//        } catch (Exception e) {
+//            throw new AmazonClientException(
+//                    "Cannot load the credentials from the credential profiles file. " +
+//                    "Please make sure that your credentials file is at the correct " +
+//                    "location (/Users/davidshin/.aws/credentials), and is in valid format.",
+//                    e);
+//        }  
+//        
+//         AmazonRekognition rekognitionClient = AmazonRekognitionClientBuilder.standard().withRegion(Regions.AP_NORTHEAST_1)
+//      		  .withCredentials(new AWSStaticCredentialsProvider(credentials)).build();
+//	     
+//         
+//         //Loading S3 buckets
+//         final AmazonS3 s3 = AmazonS3ClientBuilder.standard().withRegion(Regions.AP_NORTHEAST_1)
+//         		  .withCredentials(new AWSStaticCredentialsProvider(credentials)).build();
+//         List<Bucket> buckets = s3.listBuckets();
+//         System.out.println("Your Amazon S3 buckets are:");
+//         for (Bucket b : buckets) {
+//             System.out.println("* " + b.getName());
+//         }
+//         
+//         ListObjectsRequest listObjectsRequest = new ListObjectsRequest();
+//         listObjectsRequest.setBucketName(bucket);
+//         
+//         ObjectListing objects = s3.listObjects(listObjectsRequest);
+//         
+//         
+//         
+//         	do {
+//             objects = s3.listObjects(listObjectsRequest);
+//             
+//             for(S3ObjectSummary objectSummary : objects.getObjectSummaries()) {
+//                 logger.info("keyname : " + objectSummary.getKey());
+//                 //employeeImageList.add(objectSummary.getKey());
+//                 
+//                 photo = objectSummary.getKey();
+//                 
+//                 imagerecogrepository.save(new RecogImage(photo));
+//                 
+//                 DetectLabelsRequest request = new DetectLabelsRequest()
+//      	  	           .withImage(new Image()
+//      	  	           .withS3Object(new S3Object()
+//      	  	           .withName(photo).withBucket(bucket)))
+//      	  	           .withMaxLabels(10)
+//      	  	           .withMinConfidence(75F);
+//      	  	  
+//	      	  	  try {
+//	      	  	         DetectLabelsResult result = rekognitionClient.detectLabels(request);
+//	      	  	         List <Label> labels = result.getLabels();
+//	
+//	      	  	         System.out.println("Detected labels for " + photo);
+//	      	  	         for (Label label: labels) {
+//	      	  	            System.out.println(label.getName() + ": " + label.getConfidence().toString());
+//	      	  	            
+//	      	  	            String name = label.getName();
+//	      	  	            String score = label.getConfidence().toString();
+//	
+//	      	  	            imagerepository.save(new ImageConf(name, score));
+//	      	  	         }
+//	      	  	         
+//	      	  	         //fetch all customers
+//	      	  	       imagerepository.findAll().forEach(System.out::println);
+//	//      	          	logger.info("Images found with findAll():");
+//	//      	          	logger.info("-------------------------------");
+//	//      	          	for (ImageConf imageconf : repository.findAll()) {
+//	//      	          		logger.info(imageconf.toString());
+//	//      	          	}
+//	//      	          	
+//	//      	          	logger.info("-------------------------------");       
+//	      	  	      } catch(AmazonRekognitionException e) {
+//	      	  	         e.printStackTrace();
+//	      	  	      }
+//      	  	  
+//             }
+//             
+//             listObjectsRequest.setMarker(objects.getNextMarker());
+//         } while(objects.isTruncated());
+//	  	  
+//	    }
+//	}
 	
 	
 //	@Bean
