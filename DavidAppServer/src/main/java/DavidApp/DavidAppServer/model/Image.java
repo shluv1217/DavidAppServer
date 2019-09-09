@@ -10,8 +10,9 @@ public class Image {
 	@Id @GeneratedValue
 	private Long id;
 	private String name;
-	private Image(){	
-	}
+	
+	public Image(){
+    }
 	
 	public Image(String name){
 		this.name = name;

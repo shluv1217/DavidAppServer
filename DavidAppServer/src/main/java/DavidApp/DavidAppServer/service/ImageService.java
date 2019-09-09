@@ -56,25 +56,25 @@ public class ImageService {
 		Files.deleteIfExists(Paths.get(UPLOAD_ROOT,filename));
 	}
 	
-	@Bean
-	CommandLineRunner setUP(ImageRepository repository) throws IOException {
-		
-		return (args) -> {
-			FileSystemUtils.deleteRecursively(new File(UPLOAD_ROOT));
-			
-			Files.createDirectory(Paths.get(UPLOAD_ROOT));
-			
-			FileCopyUtils.copy("Test file", new FileWriter(UPLOAD_ROOT + "/test"));
-			repository.save(new Image("test"));
-			
-			FileCopyUtils.copy("Test file2", new FileWriter(UPLOAD_ROOT + "/test2"));
-			repository.save(new Image("test2"));
-			
-			FileCopyUtils.copy("Test file3", new FileWriter(UPLOAD_ROOT + "/test3"));
-			repository.save(new Image("test3"));		
-		};	
-		
-	}
+//	@Bean
+//	CommandLineRunner setUP(ImageRepository repository) throws IOException {
+//		
+//		return (args) -> {
+//			FileSystemUtils.deleteRecursively(new File(UPLOAD_ROOT));
+//			
+//			Files.createDirectory(Paths.get(UPLOAD_ROOT));
+//			
+//			FileCopyUtils.copy("Test file", new FileWriter(UPLOAD_ROOT + "/test"));
+//			repository.save(new Image("test"));
+//			
+//			FileCopyUtils.copy("Test file2", new FileWriter(UPLOAD_ROOT + "/test2"));
+//			repository.save(new Image("test2"));
+//			
+//			FileCopyUtils.copy("Test file3", new FileWriter(UPLOAD_ROOT + "/test3"));
+//			repository.save(new Image("test3"));		
+//		};	
+//		
+//	}
 	
 	
 	
