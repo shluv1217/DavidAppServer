@@ -1,6 +1,8 @@
 package DavidApp.DavidAppServer.controller;
 
 import java.io.IOException;
+import java.util.Collection;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;
@@ -11,6 +13,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -19,7 +22,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import DavidApp.DavidAppServer.model.Hotel;
 import DavidApp.DavidAppServer.model.Image;
+import DavidApp.DavidAppServer.repository.HotelRepository;
 import DavidApp.DavidAppServer.service.ImageService;
 
 @Controller
@@ -28,11 +33,13 @@ public class HomeController {
 	private static final String BASE_PATH = "/images";
 	private static final String FILENAME = "{filename:.+}";
 	
-    private static ImageService imageService; 
+    private ImageService imageService;  
+    private HotelRepository repository;
     
     @Autowired
-	public HomeController(ImageService imageService){
+	public HomeController(ImageService imageService, HotelRepository repository){
 		this.imageService = imageService;
+		this.repository = repository;
 	}
     
     @RequestMapping(value = "/")
@@ -60,6 +67,7 @@ public class HomeController {
     
     
     @RequestMapping(method = RequestMethod.POST, value = "/images")
+    @CrossOrigin(origins = {"http://localhost:3000", "http://localhost:5000"})
     public String createFile(@RequestParam("file") MultipartFile file, RedirectAttributes redirectAttributes){
     	try {
     		imageService.createImage(file);
@@ -69,4 +77,33 @@ public class HomeController {
     	}    	
     	return "redirect:/";
     }
+    
+    @RequestMapping(method = RequestMethod.POST, value = "/temp")
+    @CrossOrigin(origins = {"http://localhost:3000", "http://localhost:5000"})
+    Collection<Hotel> test(@RequestParam("file") MultipartFile file){
+    	  	
+    	return repository.findAll().stream().filter(this::isGreat).collect(Collectors.toList());
+    }
+    
+    private boolean isGreat(Hotel hotel) {
+        return !hotel.getName().equals("Ashai")&&
+                !hotel.getName().equals("PaleAle")&&
+                !hotel.getName().equals("Chingtao");
+    }
+    
+    @RequestMapping(method = RequestMethod.GET, value = "/posttest")
+    @CrossOrigin(origins = {"http://localhost:3000", "http://localhost:5000"})
+    public String postmethod() {
+      return "Spring Boot in Action";
+    }
+    
+    
 }
+
+
+
+
+
+
+
+

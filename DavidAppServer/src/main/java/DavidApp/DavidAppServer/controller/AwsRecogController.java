@@ -17,13 +17,17 @@ import java.util.stream.Stream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.auth.AWSCredentials;
@@ -48,17 +52,38 @@ import DavidApp.DavidAppServer.service.ImageService;
 
 
 @RestController
+@EnableAutoConfiguration
 public class AwsRecogController {
+	
   private ImageConfRepository repository;
-  private static ImageService imageService; 
+  private ImageService imageService; 
   
+  
+  Logger logger = LoggerFactory.getLogger(AwsRecogController.class);
 
-  public AwsRecogController (ImageConfRepository repository){
+  public AwsRecogController (ImageService imageService, ImageConfRepository repository){
+	  	this.imageService = imageService;
         this.repository = repository;
   }
+ 
 
+  @RequestMapping(method = RequestMethod.POST, value = "/imageProcessing")
+  @CrossOrigin(origins = {"http://localhost:3000", "http://localhost:5000"})
+  public String checkedOut(@RequestParam("file") MultipartFile file){
+	  
+	  logger.info("File name : " + file);
+	  
+	  try {
+		  imageService.createImage(file);
+	  }catch (IOException e){
+		  
+	  }  
+	  
+    return "Spring Boot in Action";
+  }
 	
 
+  
   @RequestMapping(value = "/awsRecogTest")
   @CrossOrigin(origins = {"http://localhost:3000", "http://localhost:5000"})
   //public String awsrecogtest() throws IOException {
