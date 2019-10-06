@@ -121,9 +121,9 @@ public class App {
 	    @Override
 	    public void run(String... strings)throws Exception{
 
-	        Stream.of("Conrad","Hilton","Shilla","Hayatt","Westin","Sangrila").forEach(name-> repository.save(new Hotel(name)));
-
-	        repository.findAll().forEach(System.out::println);
+//	        Stream.of("Conrad","Hilton","Shilla","Hayatt","Westin","Sangrila").forEach(name-> repository.save(new Hotel(name)));
+//
+//	        repository.findAll().forEach(System.out::println);
 	    }
 	}
 

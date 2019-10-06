@@ -1,10 +1,10 @@
 package DavidApp.DavidAppServer.repository;
 
 import org.springframework.data.repository.*;
-import DavidApp.DavidAppServer.model.Image;
+import DavidApp.DavidAppServer.model.Images;
 
-public interface ImageRepository extends PagingAndSortingRepository<Image, Long>{
+public interface ImageRepository extends PagingAndSortingRepository<Images, Long>{
 	
-	public Image findByName(String name);
+	public Images findByName(String name);
 	
 }

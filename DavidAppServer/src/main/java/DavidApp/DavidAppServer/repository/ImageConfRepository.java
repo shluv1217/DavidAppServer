@@ -9,5 +9,5 @@ import DavidApp.DavidAppServer.model.Text;
 
 
 public interface ImageConfRepository extends JpaRepository<ImageConf, Long>{
-	 List<ImageConf> findByName(String name);
+	 //List<ImageConf> findByName(String name);
 }

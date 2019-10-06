@@ -23,7 +23,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import DavidApp.DavidAppServer.model.Hotel;
-import DavidApp.DavidAppServer.model.Image;
+import DavidApp.DavidAppServer.model.Images;
 import DavidApp.DavidAppServer.repository.HotelRepository;
 import DavidApp.DavidAppServer.service.ImageService;
 
@@ -44,7 +44,7 @@ public class HomeController {
     
     @RequestMapping(value = "/")
     public String index(Model model, Pageable pageable){
-    	final Page<Image> page = imageService.findPage(pageable);
+    	final Page<Images> page = imageService.findPage(pageable);
     	model.addAttribute("page", page);
     	return "index";
     }

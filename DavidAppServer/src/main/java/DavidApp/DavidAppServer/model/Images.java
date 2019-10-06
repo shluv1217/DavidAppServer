@@ -5,16 +5,16 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Image {
+public class Images {
 	
 	@Id @GeneratedValue
 	private Long id;
 	private String name;
 	
-	public Image(){
+	public Images(){
     }
 	
-	public Image(String name){
+	public Images(String name){
 		this.name = name;
 	}
 	

@@ -9,15 +9,17 @@ public class ImageConf {
 	
 	@Id @GeneratedValue
 	private Long id;
-	private String name;
+	private String filename;
+	private String type;
 	private String score;
 	
 	public ImageConf(){
     }
 	
 	
-	public ImageConf(String name, String score){
-		this.name = name;
+	public ImageConf(String filename, String type, String score){
+		this.filename = filename;
+		this.type = type;
 		this.score = score;
 	}
 	
@@ -25,12 +27,16 @@ public class ImageConf {
 		return id;
 	}
 	
+	public String getFilename() {
+		return filename;
+	}
+	
 	public String getScore() {
 		return score;
 	}
 	
-	public String getName() {
-		return name;
+	public String getType() {
+		return type;
 	}
 
 	public void setId(Long id) {
@@ -38,8 +44,8 @@ public class ImageConf {
 	}
 	
 
-	public void setName(String name) {
-		this.name = name;
+	public void setName(String type) {
+		this.type = type;
 	}
 
 
@@ -50,8 +56,8 @@ public class ImageConf {
 	@Override
     public String toString() {
         return String.format(
-                "ImageConf[id=%d, name='%s',  score='%s']",
-                id, name, score);
+                "ImageConf[id=%d, filename = '%s', name='%s',  score='%s']",
+                id, filename, type, score);
     }
 
 

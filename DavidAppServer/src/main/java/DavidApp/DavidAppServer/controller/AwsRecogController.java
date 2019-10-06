@@ -2,18 +2,22 @@ package DavidApp.DavidAppServer.controller;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
+import java.nio.ByteBuffer;
 import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,6 +46,7 @@ import com.amazonaws.services.rekognition.model.DetectLabelsResult;
 import com.amazonaws.services.rekognition.model.Image;
 import com.amazonaws.services.rekognition.model.Label;
 import com.amazonaws.services.rekognition.model.S3Object;
+import com.amazonaws.util.IOUtils;
 
 import DavidApp.DavidAppServer.model.Hotel;
 import DavidApp.DavidAppServer.model.ImageConf;
@@ -49,46 +54,82 @@ import DavidApp.DavidAppServer.model.*;
 import DavidApp.DavidAppServer.repository.HotelRepository;
 import DavidApp.DavidAppServer.repository.ImageConfRepository;
 import DavidApp.DavidAppServer.service.ImageService;
+import DavidApp.DavidAppServer.service.aws.RecogService;
 
 
 @RestController
 @EnableAutoConfiguration
 public class AwsRecogController {
 	
-  private ImageConfRepository repository;
+
   private ImageService imageService; 
-  
+  private RecogService recogService; 
+  private ImageConfRepository imageConfRepository;
+	
   
   Logger logger = LoggerFactory.getLogger(AwsRecogController.class);
 
-  public AwsRecogController (ImageService imageService, ImageConfRepository repository){
+  public AwsRecogController (ImageService imageService, RecogService recogService, ImageConfRepository imageConfRepository){
 	  	this.imageService = imageService;
-        this.repository = repository;
+        this.recogService = recogService;
+        this.imageConfRepository = imageConfRepository;
   }
  
 
   @RequestMapping(method = RequestMethod.POST, value = "/imageProcessing")
   @CrossOrigin(origins = {"http://localhost:3000", "http://localhost:5000"})
-  public String checkedOut(@RequestParam("file") MultipartFile file){
+  Collection<ImageConf> checkedOut(@RequestParam("file") MultipartFile file){
 	  
-	  logger.info("File name : " + file);
+	   logger.info("File name : " + file);
 	  
-	  try {
-		  imageService.createImage(file);
-	  }catch (IOException e){
+
+		try {
+			imageService.createImage(file);
+			recogService.recogImage(file);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		  
-	  }  
+  
 	  
-    return "Spring Boot in Action";
+		return imageConfRepository.findAll().stream().collect(Collectors.toList());
+  }
+  
+  @RequestMapping(method = RequestMethod.GET, value = "/gridtest")
+  @CrossOrigin(origins = {"http://localhost:3000", "http://localhost:5000"})
+  Collection<ImageConf> gridtest(){
+
+		return imageConfRepository.findAll().stream().collect(Collectors.toList());
+  }
+  
+  @RequestMapping(method = RequestMethod.GET, value = "/gridtest1")
+  @CrossOrigin(origins = {"http://localhost:3000", "http://localhost:5000"})
+  public JSONObject gridtest1(){
+	  
+
+		JSONObject obj =new JSONObject();
+		JSONObject obj1 =new JSONObject();
+		JSONArray arr =new JSONArray();
+		
+		obj1.put("labels","Boston");
+		arr.add(obj1);
+		
+		
+		obj.put("chartData1", arr);
+
+
+
+		return obj;
   }
 	
 
   
-  @RequestMapping(value = "/awsRecogTest")
-  @CrossOrigin(origins = {"http://localhost:3000", "http://localhost:5000"})
-  //public String awsrecogtest() throws IOException {
-  Collection<ImageConf> awsrecogtest() throws IOException {
-	  
+//  @RequestMapping(value = "/awsRecogTest")
+//  @CrossOrigin(origins = {"http://localhost:3000", "http://localhost:5000"})
+//  //public String awsrecogtest() throws IOException {
+//  Collection<ImageConf> awsrecogtest() throws IOException {
+//	  
 //	  Logger logger = LoggerFactory.getLogger(AwsRecogController.class);
 //	  
 //	  String photo = "input.jpg";
@@ -161,8 +202,8 @@ public class AwsRecogController {
 
 	  
       //return "Spring in Action";
-	  return repository.findAll().stream().collect(Collectors.toList());
-  }
+//	  return repository.findAll().stream().collect(Collectors.toList());
+//  }
   
   
 
