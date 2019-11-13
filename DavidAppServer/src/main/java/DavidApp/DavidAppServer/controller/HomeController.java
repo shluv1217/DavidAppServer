@@ -49,6 +49,13 @@ public class HomeController {
     	return "index";
     }
     
+    @RequestMapping(value = "/main")
+    public String main(){
+    	//final Page<Images> page = imageService.findPage(pageable);
+    	//model.addAttribute("page", page);
+    	return "main";
+    }
+    
     
     @RequestMapping(method = RequestMethod.GET, value = BASE_PATH + "/" + FILENAME + "/raw")
     @ResponseBody
