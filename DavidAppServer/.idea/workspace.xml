@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15cbaa07-c7a7-4aba-8db6-31eb82e009e6" name="Default" comment="logback update">
-      <change afterPath="$PROJECT_DIR$/logs/logback.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DavidAppServer-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/DavidAppServer-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/DavidAppServer-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/DavidAppServer-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/greeting.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/greeting.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/DavidApp.DavidAppServer.AppTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/DavidApp.DavidAppServer.AppTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-DavidApp.DavidAppServer.AppTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-DavidApp.DavidAppServer.AppTest.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -215,6 +202,11 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="DavidAppServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DavidAppServer" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -407,7 +399,7 @@
       <workItem from="1572952606967" duration="531000" />
       <workItem from="1573114757465" duration="11000" />
       <workItem from="1573633243819" duration="1163000" />
-      <workItem from="1573736323184" duration="661000" />
+      <workItem from="1573736323184" duration="1303000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1564468255363</created>
@@ -437,11 +429,18 @@
       <option name="project" value="LOCAL" />
       <updated>1573634937797</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="mariadb udpate">
+      <created>1573737227780</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1573737227780</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39026000" />
+    <option name="totallyTimeSpent" value="39668000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -529,7 +528,8 @@
     </ignored-roots>
     <MESSAGE value="test" />
     <MESSAGE value="logback update" />
-    <option name="LAST_COMMIT_MESSAGE" value="logback update" />
+    <MESSAGE value="mariadb udpate" />
+    <option name="LAST_COMMIT_MESSAGE" value="mariadb udpate" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
