@@ -2,59 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae36b1f2-d9f8-4a25-a11a-bf2ddc30fb7c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/DavidAppServer.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DavidAppServer/.idea/libraries/Maven__com_googlecode_json_simple_json_simple_1_1_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DavidAppServer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/DavidAppServer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DavidAppServer/DavidAppServer.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DavidAppServer/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/src/main/java/DavidApp/DavidAppServer/controller/GreetingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DavidAppServer/src/main/java/DavidApp/DavidAppServer/controller/GreetingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/src/main/java/DavidApp/DavidAppServer/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DavidAppServer/src/main/java/DavidApp/DavidAppServer/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/DavidAppServer/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/target/DavidAppServer-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/DavidAppServer/target/DavidAppServer-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/target/DavidAppServer-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/DavidAppServer/target/DavidAppServer-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/App$HotelCommandLineRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/App$HotelCommandLineRunner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/controller/AwsRecogController.class" beforeDir="false" afterPath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/controller/AwsRecogController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/controller/AwsTestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/controller/AwsTestController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/controller/BookApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/controller/BookApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/controller/GreetingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/controller/GreetingController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/controller/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/controller/HomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/controller/HotelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/controller/HotelController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/model/Greeting.class" beforeDir="false" afterPath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/model/Greeting.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/model/Hotel.class" beforeDir="false" afterPath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/model/Hotel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/model/ImageConf.class" beforeDir="false" afterPath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/model/ImageConf.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/model/Images.class" beforeDir="false" afterPath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/model/Images.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/model/Population.class" beforeDir="false" afterPath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/model/Population.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/model/RecogImage.class" beforeDir="false" afterPath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/model/RecogImage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/model/Text.class" beforeDir="false" afterPath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/model/Text.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/repository/HotelRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/repository/HotelRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/repository/ImageConfRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/repository/ImageConfRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/repository/ImageRecogRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/repository/ImageRecogRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/repository/ImageRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/repository/ImageRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/repository/PopulationRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/repository/PopulationRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/repository/TextRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/repository/TextRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/service/ImageService.class" beforeDir="false" afterPath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/service/ImageService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/service/aws/RecogService.class" beforeDir="false" afterPath="$PROJECT_DIR$/DavidAppServer/target/classes/DavidApp/DavidAppServer/service/aws/RecogService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/target/classes/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/target/classes/META-INF/maven/DavidApp/DavidAppServer/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/target/classes/META-INF/maven/DavidApp/DavidAppServer/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/DavidAppServer/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/DavidAppServer/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/DavidAppServer/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/DavidAppServer/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/target/surefire-reports/DavidApp.DavidAppServer.AppTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DavidAppServer/target/surefire-reports/DavidApp.DavidAppServer.AppTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/target/surefire-reports/TEST-DavidApp.DavidAppServer.AppTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DavidAppServer/target/surefire-reports/TEST-DavidApp.DavidAppServer.AppTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/target/test-classes/DavidApp/DavidAppServer/AppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/DavidAppServer/target/test-classes/DavidApp/DavidAppServer/AppTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/target/test-classes/DavidApp/DavidAppServer/AwsAPITest.class" beforeDir="false" afterPath="$PROJECT_DIR$/DavidAppServer/target/test-classes/DavidApp/DavidAppServer/AwsAPITest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/target/test-classes/DavidApp/DavidAppServer/DavidTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/DavidAppServer/target/test-classes/DavidApp/DavidAppServer/DavidTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/upload-dir/fullsizeoutput_721.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/upload-dir/fullsizeoutput_785.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/upload-dir/fullsizeoutput_854.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/upload-dir/fullsizeoutput_883.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DavidAppServer/upload-dir/fullsizeoutput_8b7.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DavidAppServer/logs/spring.log" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +25,7 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -128,52 +76,14 @@
               <item name="DavidAppServer" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DavidAppServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DavidAppServer" type="462c0819:PsiDirectoryNode" />
-              <item name="DavidAppServer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="DavidApp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DavidAppServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DavidAppServer" type="462c0819:PsiDirectoryNode" />
-              <item name="DavidAppServer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="DavidApp" type="462c0819:PsiDirectoryNode" />
-              <item name="DavidAppServer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DavidAppServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DavidAppServer" type="462c0819:PsiDirectoryNode" />
-              <item name="DavidAppServer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="DavidApp" type="462c0819:PsiDirectoryNode" />
-              <item name="DavidAppServer" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DavidAppServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DavidAppServer" type="462c0819:PsiDirectoryNode" />
-              <item name="DavidAppServer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -212,16 +122,17 @@
       <workItem from="1572828686683" duration="71000" />
       <workItem from="1572828769080" duration="37000" />
       <workItem from="1572936173686" duration="45000" />
+      <workItem from="1573633211873" duration="48000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="267000" />
+    <option name="totallyTimeSpent" value="315000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2639485" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26752505" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -245,7 +156,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info active="true" anchor="right" id="Maven" order="5" visible="true" weight="0.3297568" />
+      <window_info anchor="right" id="Maven" order="5" visible="true" weight="0.28397712" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Database" order="8" weight="0.3297568" />
