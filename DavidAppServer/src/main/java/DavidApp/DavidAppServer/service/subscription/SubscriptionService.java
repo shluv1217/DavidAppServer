@@ -4,8 +4,8 @@ package DavidApp.DavidAppServer.service.subscription;
 import java.io.IOException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import DavidApp.DavidAppServer.model.Subscription;
-import DavidApp.DavidAppServer.repository.SubscriptionRepository;
+import DavidApp.DavidAppServer.model.subcription.*;
+import DavidApp.DavidAppServer.repository.subscription.*;
 
 
 @Service

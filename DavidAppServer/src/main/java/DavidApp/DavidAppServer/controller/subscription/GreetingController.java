@@ -1,4 +1,4 @@
-package DavidApp.DavidAppServer.controller;
+package DavidApp.DavidAppServer.controller.subscription;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;

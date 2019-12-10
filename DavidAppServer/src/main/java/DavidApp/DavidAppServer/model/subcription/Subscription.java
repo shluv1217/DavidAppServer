@@ -1,4 +1,4 @@
-package DavidApp.DavidAppServer.model;
+package DavidApp.DavidAppServer.model.subcription;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
