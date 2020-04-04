@@ -1,6 +1,6 @@
-DavidApp/DavidAppServer/model/Subscription.class
 DavidApp/DavidAppServer/model/ImageConf.class
 DavidApp/DavidAppServer/controller/BookApplication.class
+DavidApp/DavidAppServer/controller/subscription/SubscriptionController.class
 DavidApp/DavidAppServer/service/ImageService.class
 DavidApp/DavidAppServer/App$HotelCommandLineRunner.class
 DavidApp/DavidAppServer/repository/HotelRepository.class
@@ -8,9 +8,12 @@ DavidApp/DavidAppServer/controller/AwsTestController.class
 DavidApp/DavidAppServer/model/Hotel.class
 DavidApp/DavidAppServer/repository/ImageRepository.class
 DavidApp/DavidAppServer/controller/SampleController.class
+DavidApp/DavidAppServer/model/subcription/Subscription.class
+DavidApp/DavidAppServer/controller/subscription/GreetingController.class
 DavidApp/DavidAppServer/repository/ImageRecogRepository.class
 DavidApp/DavidAppServer/repository/ImageConfRepository.class
 DavidApp/DavidAppServer/controller/HotelController.class
+DavidApp/DavidAppServer/repository/subscription/SubscriptionRepository.class
 DavidApp/DavidAppServer/repository/TextRepository.class
 DavidApp/DavidAppServer/model/RecogImage.class
 DavidApp/DavidAppServer/service/subscription/SubscriptionService.class
@@ -20,10 +23,7 @@ DavidApp/DavidAppServer/repository/PopulationRepository.class
 DavidApp/DavidAppServer/model/Images.class
 DavidApp/DavidAppServer/model/Greeting.class
 DavidApp/DavidAppServer/model/Population.class
-DavidApp/DavidAppServer/repository/SubscriptionRepository.class
-DavidApp/DavidAppServer/controller/GreetingController.class
 DavidApp/DavidAppServer/controller/AwsRecogController.class
-DavidApp/DavidAppServer/controller/SubmissionController.class
 DavidApp/DavidAppServer/service/aws/RecogService.class
 DavidApp/DavidAppServer/service/SampleService.class
 DavidApp/DavidAppServer/controller/HomeController.class
